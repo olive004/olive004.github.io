@@ -18,6 +18,9 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -125,5 +128,31 @@
     <footer>
         <p>&copy; 2026 Olivia Gallup. All rights reserved.</p>
     </footer>
+    
+    <!-- Dark mode toggle script -->
+     <script>
+        // Initialize theme from localStorage or system preference
+        const savedTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Theme toggle button
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon();
+        });
+        
+        function updateToggleIcon() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const icon = themeToggle.querySelector('i');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        
+        updateToggleIcon();
+    </script>
 </body>
 </html>
