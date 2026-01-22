@@ -1,6 +1,24 @@
 /* ===========================
-   Reset and Base Styles
+   Custom Font
    =========================== */
+@font-face {
+    font-family: 'Harding';
+    src: url('assets/Harding_Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Prevents invisible text while font loads */
+}
+
+/* If you have other variants: */
+/* @font-face {
+    font-family: 'Harding';
+    src: url('assets/Harding_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+} */
+
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +40,13 @@
     --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+body {
+    font-family: 'Harding', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
 /* Dark mode */
 [data-theme="dark"] {
     --primary-color: #abceef;
@@ -37,13 +62,6 @@
 
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
 }
 
 /* ===========================
