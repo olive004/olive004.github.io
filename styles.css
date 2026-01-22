@@ -237,14 +237,34 @@ header {
 /* ===========================
    Publications Page
    =========================== */
-.scholar-link {
-    margin: 2rem 0;
-    text-align: center;
+
+.scholar-section {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.scholar-info {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.scholar-link-inline {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.scholar-link-inline:hover {
+    opacity: 0.8;
 }
 
 .button-link {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     background-color: var(--secondary-color);
     color: var(--white);
     text-decoration: none;
@@ -264,20 +284,23 @@ header {
 }
 
 .publications-container {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
-.note {
-    background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 4px;
+.publications-container h2 {
+    margin-bottom: 1.5rem;
 }
 
-/* Publication List (Manual fallback) */
+/* Publication List */
 .publication-list {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-style: italic;
 }
 
 .publication-item {
@@ -286,58 +309,100 @@ header {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s;
+}
+
+.publication-item:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateX(2px);
 }
 
 .publication-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .publication-item .authors {
     color: #666;
     margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+[data-theme="dark"] .publication-item .authors {
+    color: #aaa;
 }
 
 .publication-item .venue {
     color: #888;
     margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+[data-theme="dark"] .publication-item .venue {
+    color: #999;
+}
+
+.publication-item .description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 1rem 0;
 }
 
 .pub-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-.pub-links a {
-    padding: 0.4rem 1rem;
+.pub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
     background-color: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
+    border-radius: 6px;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
     transition: all 0.3s;
 }
 
-.pub-links a:hover {
+.pub-btn:hover {
     background-color: var(--secondary-color);
     color: var(--white);
-    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .pub-btn {
+    background-color: var(--white);
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .pub-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
 }
 
 /* Metrics Section */
 .metrics-section {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
     border-top: 2px solid var(--border-color);
+}
+
+.metrics-section h2 {
+    margin-bottom: 1.5rem;
 }
 
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
-    margin-top: 1.5rem;
 }
 
 .metric-card {
@@ -346,6 +411,12 @@ header {
     border-radius: 8px;
     text-align: center;
     border: 2px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.metric-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--secondary-color);
 }
 
 .metric-card h3 {
@@ -353,12 +424,39 @@ header {
     color: #666;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    border: none;
+    padding: 0;
+}
+
+[data-theme="dark"] .metric-card h3 {
+    color: #aaa;
 }
 
 .metric-value {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--secondary-color);
+    margin: 0;
+}
+
+.note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    color: #856404;
+}
+
+[data-theme="dark"] .note {
+    background-color: #332701;
+    border-left-color: #ff9800;
+    color: #ffb74d;
+}
+
+/* Manual Publications */
+.manual-publications {
+    margin-top: 2rem;
 }
 
 /* ===========================

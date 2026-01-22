@@ -57,68 +57,69 @@
         <section class="main-content">
             <h1>Publications</h1>
             
-            <div class="scholar-link">
-                <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank" class="button-link">
+            <div class="scholar-section">
+                <p class="scholar-info">
+                    My publications are maintained on <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" class="scholar-link-inline">Google Scholar</a>. 
+                    Below is a curated list of selected publications. For the most up-to-date and complete list, please visit my Scholar profile.
+                </p>
+                <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" class="button-link">
                     <i class="fas fa-graduation-cap"></i> View Full Profile on Google Scholar
                 </a>
             </div>
 
-            <!-- Google Scholar Embed -->
-            <div class="publications-container">
-                <!-- Method 1: Direct iframe embed (may have limitations) -->
-                <div id="scholar-publications">
-                    <p class="note">
-                        <strong>Note:</strong> For the most up-to-date publication list, 
-                        please visit my <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank">Google Scholar profile</a>.
-                    </p>
-                    
-                    <!-- Google Scholar citation widget -->
-                    <iframe 
-                        src="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl&hl=en" 
-                        width="100%" 
-                        height="800px" 
-                        frameborder="0"
-                        style="border: none; border-radius: 8px; background: white;">
-                    </iframe>
-                </div>
-
-                <!-- Alternative: Manual publication list that you can update -->
-                <!-- Uncomment and use this if the iframe doesn't work well -->
-                <!--
-                <div class="publication-list">
-                    <div class="publication-item">
-                        <h3>Title of Your Publication</h3>
-                        <p class="authors">Author 1, <strong>Your Name</strong>, Author 3</p>
-                        <p class="venue"><em>Journal/Conference Name</em>, Year</p>
-                        <p class="description">Brief description of the publication.</p>
-                        <div class="pub-links">
-                            <a href="DOI_LINK" target="_blank">DOI</a>
-                            <a href="PDF_LINK" target="_blank">PDF</a>
-                            <a href="CODE_LINK" target="_blank">Code</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Add more publications here -->
-                <!--
-                </div>
-                -->
-            </div>
-
-            <!-- Citation Metrics (Optional - manually updated) -->
+            <!-- Citation Metrics -->
             <div class="metrics-section">
-                <h2>Metrics</h2>
+                <h2>Citation Metrics</h2>
                 <div class="metrics-grid">
                     <div class="metric-card">
                         <h3>Citations</h3>
-                        <p class="metric-value">--</p>
+                        <p class="metric-value" id="citation-count">--</p>
                     </div>
                     <div class="metric-card">
                         <h3>h-index</h3>
-                        <p class="metric-value">--</p>
+                        <p class="metric-value" id="h-index">--</p>
                     </div>
                     <div class="metric-card">
                         <h3>i10-index</h3>
-                        <p class="metric-value">--</p>
+                        <p class="metric-value" id="i10-index">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publications List -->
+            <div class="publications-container">
+                <h2>Selected Publications</h2>
+                <div id="publications-list" class="publication-list">
+                    <div class="loading-message">
+                        <i class="fas fa-spinner fa-spin"></i> Loading publications...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fallback Manual List -->
+            <div class="manual-publications" style="display: none;">
+                <h2>Publications</h2>
+                <p class="note">
+                    For the most up-to-date publication list with full metrics, 
+                    please visit my <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
+                </p>
+                
+                <!-- Add your publications manually here as fallback -->
+                <div class="publication-item">
+                    <h3>Your Publication Title</h3>
+                    <p class="authors">Author 1, <strong>Olivia Gallup</strong>, Author 3</p>
+                    <p class="venue"><em>Journal/Conference Name</em>, Year</p>
+                    <p class="description">Brief description of the publication and its significance.</p>
+                    <div class="pub-links">
+                        <a href="#" target="_blank" class="pub-btn">
+                            <i class="fas fa-book"></i> Paper
+                        </a>
+                        <a href="#" target="_blank" class="pub-btn">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
+                        <a href="#" target="_blank" class="pub-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
                     </div>
                 </div>
             </div>
@@ -130,7 +131,7 @@
     </footer>
     
     <!-- Dark mode toggle script -->
-     <script>
+    <script>
         // Initialize theme from localStorage or system preference
         const savedTheme = localStorage.getItem('theme') || 
             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -153,6 +154,89 @@
         }
         
         updateToggleIcon();
+    </script>
+
+    <!-- Google Scholar Publications Fetcher -->
+    <script>
+        // Fetch publications from Google Scholar via unofficial API
+        // Using scholarly package data (requires backend, or use fallback)
+        
+        // For now, we'll use a manual JSON data structure that mimics Scholar data
+        // You can update this with actual publication data
+        const scholarUserId = 'GwYjyykAAAAJ';
+        
+        // Function to fetch publications (placeholder - replace with actual data)
+        async function loadPublications() {
+            try {
+                // Method 1: Try to fetch from a Google Scholar API (CORS may block)
+                // This is a fallback approach using a free API
+                const response = await fetch(`https://cors-anywhere.herokuapp.com/https://scholar.google.com/citations?user=${scholarUserId}&hl=en`);
+                
+                // If CORS blocks it, fall back to manual data
+                if (!response.ok) {
+                    loadManualPublications();
+                    return;
+                }
+                
+                // Parse the response (simplified - adjust based on actual HTML structure)
+                // This is complex due to Google Scholar's HTML structure
+                loadManualPublications();
+                
+            } catch (error) {
+                console.log('Could not fetch from Google Scholar, using manual data:', error);
+                loadManualPublications();
+            }
+        }
+        
+        // Load manual publications as fallback
+        function loadManualPublications() {
+            // Example publication data - customize with your actual publications
+            const publications = [
+                {
+                    title: "Example Publication Title",
+                    authors: "Author One, Olivia Gallup, Author Three",
+                    venue: "Journal of Example Studies",
+                    year: 2024,
+                    description: "A brief description of what this publication covers.",
+                    links: {
+                        doi: "https://doi.org/example",
+                        pdf: "#",
+                        code: "https://github.com/example"
+                    }
+                },
+                // Add more publications here
+            ];
+            
+            const listContainer = document.getElementById('publications-list');
+            
+            if (publications.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="loading-message">
+                        <p>Visit my <a href="https://scholar.google.com/citations?user=${scholarUserId}&hl=en" target="_blank">Google Scholar profile</a> to see all publications.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const html = publications.map(pub => `
+                <div class="publication-item">
+                    <h3>${pub.title}</h3>
+                    <p class="authors">${pub.authors}</p>
+                    <p class="venue"><em>${pub.venue}</em>, ${pub.year}</p>
+                    <p class="description">${pub.description}</p>
+                    <div class="pub-links">
+                        ${pub.links.doi ? `<a href="${pub.links.doi}" target="_blank" class="pub-btn"><i class="fas fa-link"></i> DOI</a>` : ''}
+                        ${pub.links.pdf ? `<a href="${pub.links.pdf}" target="_blank" class="pub-btn"><i class="fas fa-book"></i> PDF</a>` : ''}
+                        ${pub.links.code ? `<a href="${pub.links.code}" target="_blank" class="pub-btn"><i class="fab fa-github"></i> Code</a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+            
+            listContainer.innerHTML = html;
+        }
+        
+        // Load publications on page load
+        window.addEventListener('DOMContentLoaded', loadPublications);
     </script>
 </body>
 </html>
