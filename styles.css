@@ -33,6 +33,7 @@
     --secondary-color: #4e20f5;
     --accent-color: #e74c3c;
     --text-color: #333;
+    --text-color-smaller: #2b2b2b;
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --border-color: #e1e4e8;
@@ -40,19 +41,13 @@
     --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-body {
-    font-family: 'Harding', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
-}
-
 /* Dark mode */
 [data-theme="dark"] {
     --primary-color: #abceef;
     --secondary-color: #ca9bff;
     --accent-color: #ef5350;
-    --text-color: #e0e0e0;
+    --text-color: #efefef;
+    --text-color-smaller: #ececec;
     --light-bg: #1e1e1e;
     --white: #2d2d2d;
     --border-color: #3a3a3a;
@@ -61,6 +56,10 @@ body {
 }
 
 body {
+    font-family: 'Harding', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
