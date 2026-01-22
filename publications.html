@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Olivia Gallup</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">Olivia Gallup</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-with-sidebar">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="assets/profile.jpg" alt="Olivia Gallup" class="profile-photo">
+                <h2>Olivia Gallup</h2>
+                <p class="title">Researcher & Developer</p>
+                
+                <div class="social-links">
+                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" title="ORCID">
+                        <i class="fab fa-orcid"></i>
+                    </a>
+                    <a href="https://github.com/olive004" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank" title="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:olivia.gallup@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <h1>Publications</h1>
+            
+            <div class="scholar-link">
+                <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank" class="button-link">
+                    <i class="fas fa-graduation-cap"></i> View Full Profile on Google Scholar
+                </a>
+            </div>
+
+            <!-- Google Scholar Embed -->
+            <div class="publications-container">
+                <!-- Method 1: Direct iframe embed (may have limitations) -->
+                <div id="scholar-publications">
+                    <p class="note">
+                        <strong>Note:</strong> For the most up-to-date publication list, 
+                        please visit my <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank">Google Scholar profile</a>.
+                    </p>
+                    
+                    <!-- Google Scholar citation widget -->
+                    <iframe 
+                        src="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl&hl=en" 
+                        width="100%" 
+                        height="800px" 
+                        frameborder="0"
+                        style="border: none; border-radius: 8px; background: white;">
+                    </iframe>
+                </div>
+
+                <!-- Alternative: Manual publication list that you can update -->
+                <!-- Uncomment and use this if the iframe doesn't work well -->
+                <!--
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <h3>Title of Your Publication</h3>
+                        <p class="authors">Author 1, <strong>Your Name</strong>, Author 3</p>
+                        <p class="venue"><em>Journal/Conference Name</em>, Year</p>
+                        <p class="description">Brief description of the publication.</p>
+                        <div class="pub-links">
+                            <a href="DOI_LINK" target="_blank">DOI</a>
+                            <a href="PDF_LINK" target="_blank">PDF</a>
+                            <a href="CODE_LINK" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more publications here -->
+                <!--
+                </div>
+                -->
+            </div>
+
+            <!-- Citation Metrics (Optional - manually updated) -->
+            <div class="metrics-section">
+                <h2>Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Citations</h3>
+                        <p class="metric-value">--</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>h-index</h3>
+                        <p class="metric-value">--</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>i10-index</h3>
+                        <p class="metric-value">--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Olivia Gallup. All rights reserved.</p>
+    </footer>
+</body>
+</html>
