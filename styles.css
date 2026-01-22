@@ -33,7 +33,7 @@
     --secondary-color: #4e20f5;
     --accent-color: #e74c3c;
     --text-color: #333;
-    --text-color-smaller: #2b2b2b;
+    --text-color-larger: #515151;
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --border-color: #e1e4e8;
@@ -47,7 +47,7 @@
     --secondary-color: #ca9bff;
     --accent-color: #ef5350;
     --text-color: #efefef;
-    --text-color-smaller: #ececec;
+    --text-color-larger: #cdcdcd;
     --light-bg: #1e1e1e;
     --white: #2d2d2d;
     --border-color: #3a3a3a;
@@ -159,7 +159,7 @@ header {
 }
 
 .profile-card .title {
-    color: #666;
+    color: var(--text-color-larger);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
 }
@@ -219,7 +219,7 @@ header {
 
 .lead {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--text-color-larger);
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -347,7 +347,7 @@ header {
 }
 
 [data-theme="dark"] .publication-item .authors {
-    color: #aaa;
+    color: #c5c5c5;
 }
 
 .publication-item .venue {
@@ -357,7 +357,7 @@ header {
 }
 
 [data-theme="dark"] .publication-item .venue {
-    color: #999;
+    color: #adadad;
 }
 
 .publication-item .description {
@@ -529,7 +529,7 @@ header {
 }
 
 .project-description {
-    color: #555;
+    color: var(--text-color);
     line-height: 1.6;
     margin: 1rem 0;
 }
