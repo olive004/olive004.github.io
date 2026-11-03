@@ -4,274 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Olivia Gallup</title>
+    <meta name="description" content="Publications by Olivia Gallup.">
+    <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
+         Font preview: add ?font=harding or ?font=plex to any page URL. -->
+    <script>
+        (function () {
+            var d = document.documentElement, f = null;
+            var q = new URLSearchParams(location.search).get('font');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+                if (q) { q === 'harding' ? localStorage.setItem('font', 'harding') : localStorage.removeItem('font'); }
+                f = localStorage.getItem('font');
+            } catch (e) {}
+            if ((q || f) === 'harding') d.setAttribute('data-font', 'harding');
+        })();
+    </script>
+    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">Olivia Gallup</h1>
+        <nav class="nav-container" aria-label="Main">
+            <a href="index.html" class="logo">Olivia Gallup</a>
+            <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="publications.html" class="active" aria-current="page">Publications</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </nav>
     </header>
 
     <main class="container-with-sidebar">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-card">
-                <img src="assets/profile.png" alt="Olivia Gallup" class="profile-photo">
+                <img src="assets/profile.png" alt="Portrait of Olivia Gallup" class="profile-photo" width="160" height="160">
                 <h2>Olivia Gallup</h2>
-                <p class="title">Researcher & Developer</p>
-                
+                <p class="title">Machine Learning Researcher &amp; Engineer</p>
+                <p class="affiliation">InstaDeep &middot; London<br>DPhil, University of Oxford</p>
                 <div class="social-links">
-                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" title="ORCID">
-                        <i class="fab fa-orcid"></i>
-                    </a>
-                    <a href="https://github.com/olive004" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl" target="_blank" title="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:olivia.gallup@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://github.com/olive004" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:olivia.gallup@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <section class="main-content">
+        <section class="main-content" id="main">
             <h1>Publications</h1>
-            
+
             <div class="scholar-section">
-                <p class="scholar-info">
-                    My publications are maintained on <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" class="scholar-link-inline">Google Scholar</a>. 
-                    Below is a curated list of selected publications. For the most up-to-date and complete list, please visit my Scholar profile.
-                </p>
-                <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" class="button-link">
-                    <i class="fas fa-graduation-cap"></i> View Full Profile on Google Scholar
+                <p>Selected publications are listed below. Google Scholar has the full, up-to-date list with citations.</p>
+                <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="button-link">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar
                 </a>
             </div>
 
-            <!-- Citation Metrics -->
-            <!-- <div class="metrics-section">
-                <h2>Citation Metrics</h2>
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <h3>Citations</h3>
-                        <p class="metric-value" id="citation-count">--</p>
-                    </div>
-                    <div class="metric-card">
-                        <h3>h-index</h3>
-                        <p class="metric-value" id="h-index">--</p>
-                    </div>
-                    <div class="metric-card">
-                        <h3>i10-index</h3>
-                        <p class="metric-value" id="i10-index">--</p>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Publications List -->
-            <div class="publications-container">
-                <h2>Selected Publications</h2>
-                <div id="publications-list" class="publication-list">
-                    <div class="loading-message">
-                        <i class="fas fa-spinner fa-spin"></i> Loading publications...
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fallback Manual List -->
-            <div class="manual-publications" style="display: none;">
-                <h2>Publications</h2>
-                <p class="note">
-                    For the most up-to-date publication list with full metrics, 
-                    please visit my <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
-                </p>
-                
-                <!-- Add your publications manually here as fallback -->
-                <div class="publication-item">
-                    <h3>Generative design of synthetic gene circuits for functional and evolutionary properties</h3>
-                    <p class="authors"><strong>Olivia Gallup</strong>, Harrison Steel</p>
-                    <p class="venue"><em>bioRxiv</em>, 2025</p>
-                    <!-- <p class="description">Brief description of the publication and its significance.</p> -->
+            <h2>Selected publications</h2>
+            <ol class="publication-list">
+                <li class="publication-item">
+                    <h3>Steered Not Stirred: Effective Tilting in Generative Models using Surrogate Reward Mixing</h3>
+                    <p class="authors">Alec Sargood, <span class="me">Olivia Gallup</span>, Georg Maierhofer, Noam Ghenassia, Paul Duckworth, Krisztina Sinkovics, Avishek Joey Bose</p>
+                    <p class="venue"><em>NeurIPS 2026 Workshop (STODY)</em>, poster (2026) <span class="badge">ICLR 2027 under review</span></p>
+                    <p class="description">Inference-time reward tilting of pretrained generative models by mixing surrogate rewards.</p>
                     <div class="pub-links">
-                        <a href="#" target="_blank" class="pub-btn">
-                            <i class="fas fa-book"></i> Paper
-                        </a>
-                        <a href="#" target="_blank" class="pub-btn">
-                            <i class="fas fa-link"></i> DOI
-                        </a>
-                        <a href="#" target="_blank" class="pub-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
+                        <a href="https://arxiv.org/abs/2610.25502" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv</a>
+                        <a href="https://openreview.net/forum?id=9Ysy6qcUWm" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-comments" aria-hidden="true"></i> OpenReview</a>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="publication-item">
+                    <h3>ALF: An Active Learning Framework for Scientific Discovery</h3>
+                    <p class="authors">Shikha Surana, Alex Hawkins-Hooker, <span class="me">Olivia Gallup</span>, Christoph Brunken, Jules Tilly, Paul Duckworth</p>
+                    <p class="venue"><em>arXiv preprint</em> (2026)</p>
+                    <p class="description">An open-source, modular framework for running the full active-learning loop (search, surrogate modelling and acquisition) over protein, molecule and materials design spaces.</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.48550/arXiv.2609.31197" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-file-lines" aria-hidden="true"></i> arXiv</a>
+                        <a href="https://github.com/instadeepai/alf" target="_blank" rel="noopener" class="pub-btn"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                        <a href="https://instadeepai.github.io/alf/" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-book" aria-hidden="true"></i> Docs</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Characterization of Synthetic Gene Circuits with Absolute Quantification in Continuous Culture</h3>
+                    <p class="authors">Scott B. Stacey, Ting An Lee, <span class="me">Olivia Gallup</span>, Eszter Csibra, Antonis Papachristodoulou, Harrison Steel, Kirill Sechkar</p>
+                    <p class="venue"><em>Synthetic Gene Circuits: Methods and Protocols</em>, Springer, pp. 145&ndash;195 (2026)</p>
+                    <div class="pub-links">
+                        <a href="https://link.springer.com/protocol/10.1007/978-1-0716-5304-3_8" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Chapter</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Dynamic Robust Control of Microbial Communities Using Cybergenetics</h3>
+                    <p class="authors">Ting An Lee, Scott B. Stacey, <span class="me">Olivia Gallup</span>, Harrison Steel, Kirill Sechkar</p>
+                    <p class="venue"><em>Synthetic Gene Circuits: Methods and Protocols</em>, Springer, pp. 261&ndash;285 (2026)</p>
+                    <div class="pub-links">
+                        <a href="https://link.springer.com/protocol/10.1007/978-1-0716-5304-3_13" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Chapter</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Generative design of synthetic gene circuits for functional and evolutionary properties</h3>
+                    <p class="authors"><span class="me">Olivia Gallup</span>, Harrison Steel</p>
+                    <p class="venue"><em>npj Systems Biology and Applications</em> 12, 62 (2026)</p>
+                    <p class="description">Conditional VAEs trained on JAX-accelerated dynamical simulations generate genetic circuit designs that meet both functional and evolutionary-robustness targets, with an interpretable latent space.</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1038/s41540-026-00683-6" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Paper</a>
+                        <a href="https://github.com/olive004/EvoScaper" target="_blank" rel="noopener" class="pub-btn"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Computational Synthetic Biology Enabled through JAX: A Showcase</h3>
+                    <p class="authors"><span class="me">Olivia Gallup</span>, Kirill Sechkar, Sebastian Towers, Harrison Steel</p>
+                    <p class="venue"><em>ACS Synthetic Biology</em> 13(9), 3046 (2024)</p>
+                    <p class="description">JAX-based tools for synthetic biology, from vectorised biochemical reaction simulation to genetic circuit design optimisation.</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1021/acssynbio.4c00307" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Paper</a>
+                        <a href="https://github.com/Steel-Lab-Oxford/core-bioreaction-simulation" target="_blank" rel="noopener" class="pub-btn"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Synthetic biology landscape in the UK</h3>
+                    <p class="authors">Georg K. A. Wachter, <span class="me">Olivia Gallup</span>, James Bayne, Louise Horsfall</p>
+                    <p class="venue"><em>Biotechnology Notes</em> 3, 70&ndash;74 (2022)</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.biotno.2022.07.002" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Paper</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                    <h3>Ten Future Challenges for Synthetic Biology</h3>
+                    <p class="authors"><span class="me">Olivia Gallup</span>, Hia Ming, Tom Ellis</p>
+                    <p class="venue"><em>Engineering Biology</em> 5(3), 51&ndash;59 (2021)</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1049/enb2.12011" target="_blank" rel="noopener" class="pub-btn"><i class="fas fa-link" aria-hidden="true"></i> Paper</a>
+                    </div>
+                </li>
+            </ol>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Olivia Gallup. All rights reserved.</p>
+        <p>&copy; 2026 Olivia Gallup</p>
     </footer>
-    
-    <!-- Dark mode toggle script -->
-    <script>
-        // Initialize theme from localStorage or system preference
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        
-        // Theme toggle button
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateToggleIcon();
-        });
-        
-        function updateToggleIcon() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggle.querySelector('i');
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-        
-        updateToggleIcon();
-    </script>
 
-    <!-- Google Scholar Publications Fetcher -->
-    <script>
-        // Fetch publications from Google Scholar via unofficial API
-        // Using scholarly package data (requires backend, or use fallback)
-        
-        // For now, we'll use a manual JSON data structure that mimics Scholar data
-        // You can update this with actual publication data
-        const scholarUserId = 'GwYjyykAAAAJ';
-        
-        // Function to fetch publications (placeholder - replace with actual data)
-        async function loadPublications() {
-            try {
-                // Method 1: Try to fetch from a Google Scholar API (CORS may block)
-                // This is a fallback approach using a free API
-                const response = await fetch(`https://cors-anywhere.herokuapp.com/https://scholar.google.com/citations?user=${scholarUserId}&hl=en`);
-                
-                // If CORS blocks it, fall back to manual data
-                if (!response.ok) {
-                    loadManualPublications();
-                    return;
-                }
-                
-                // Parse the response (simplified - adjust based on actual HTML structure)
-                // This is complex due to Google Scholar's HTML structure
-                loadManualPublications();
-                
-            } catch (error) {
-                console.log('Could not fetch from Google Scholar, using manual data:', error);
-                loadManualPublications();
-            }
-        }
-        
-        // Load manual publications as fallback
-        function loadManualPublications() {
-            // Example publication data - customize with your actual publications
-            const publications = [
-                {
-                    title: "Generative design of synthetic gene circuits for functional and evolutionary properties",
-                    authors: "Olivia Gallup, Harrison Steel",
-                    venue: "bioRxiv",
-                    year: 2025,
-                    description: "Generating genetic circuit designs using conditional variational autoencoders (CVAEs) enables optimization " +
-                                "of both functional performance and evolutionary robustness.",
-                    links: {
-                        doi: "https://doi.org/10.1101/2025.09.26.678595",
-                        pdf: "https://www.biorxiv.org/content/biorxiv/early/2025/09/27/2025.09.26.678595.full.pdf",
-                        code: "https://github.com/olive004/EvoScaper"
-                    }
-                },
-                {
-                    title: "Computational synthetic biology enabled through jax: A showcase",
-                    authors: "Olivia Gallup, Kirill Sechkar, Sebastian Towers, Harrison Steel",
-                    venue: "ACS Synthetic Biology",
-                    year: 2024,
-                    description: "A showcase of JAX-based computational tools for synthetic biology, including efficient " +
-                                 "biochemical reaction simulations and genetic circuit design optimizations.",
-                    links: {
-                        doi: "https://doi.org/10.1021/acssynbio.4c00307",
-                        pdf: "https://pubs.acs.org/doi/pdf/10.1021/acssynbio.4c00307?ref=article_openPDF",
-                        code: "https://github.com/Steel-Lab-Oxford/core-bioreaction-simulation"
-                    }
-                },
-                {
-                    title: "Synthetic biology landscape in the UK",
-                    authors: "Georg KA Wachter, Olivia Gallup, James Bayne, Louise Horsfall",
-                    venue: "Biotechnology Notes",
-                    year: 2022,
-                    description: "",
-                    links: {
-                        doi: "https://doi.org/10.1016/j.biotno.2022.07.002",
-                    }
-                },
-                {
-                    title: "Ten future challenges for synthetic biology",
-                    authors: "Olivia Gallup, Hia Ming, Tom Ellis",
-                    venue: "Engineering Biology",
-                    year: 2021,
-                    description: "",
-                    links: {
-                        doi: "https://doi.org/10.1049/enb2.12011Digital",
-                        pdf: "https://ietresearch.onlinelibrary.wiley.com/doi/epdf/10.1049/enb2.12011",
-                    }
-                },
-                // Add more publications here
-            ];
-            
-            const listContainer = document.getElementById('publications-list');
-            
-            if (publications.length === 0) {
-                listContainer.innerHTML = `
-                    <div class="loading-message">
-                        <p>Visit my <a href="https://scholar.google.com/citations?user=${scholarUserId}&hl=en" target="_blank">Google Scholar profile</a> to see all publications.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            const html = publications.map(pub => `
-                <div class="publication-item">
-                    <h3>${pub.title}</h3>
-                    <p class="authors">${pub.authors}</p>
-                    <p class="venue"><em>${pub.venue}</em>, ${pub.year}</p>
-                    <p class="description">${pub.description}</p>
-                    <div class="pub-links">
-                        ${pub.links.doi ? `<a href="${pub.links.doi}" target="_blank" class="pub-btn"><i class="fas fa-link"></i> DOI</a>` : ''}
-                        ${pub.links.pdf ? `<a href="${pub.links.pdf}" target="_blank" class="pub-btn"><i class="fas fa-book"></i> PDF</a>` : ''}
-                        ${pub.links.code ? `<a href="${pub.links.code}" target="_blank" class="pub-btn"><i class="fab fa-github"></i> Code</a>` : ''}
-                    </div>
-                </div>
-            `).join('');
-            
-            listContainer.innerHTML = html;
-        }
-        
-        // Load publications on page load
-        window.addEventListener('DOMContentLoaded', loadPublications);
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>

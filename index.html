@@ -3,125 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olivia Gallup - Academic and Project Portfolio</title>
+    <title>Olivia Gallup</title>
+    <meta name="description" content="Olivia Gallup - machine learning researcher working on generative models and inference-time steering for molecular design.">
+    <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
+         Font preview: add ?font=harding or ?font=plex to any page URL. -->
+    <script>
+        (function () {
+            var d = document.documentElement, f = null;
+            var q = new URLSearchParams(location.search).get('font');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+                if (q) { q === 'harding' ? localStorage.setItem('font', 'harding') : localStorage.removeItem('font'); }
+                f = localStorage.getItem('font');
+            } catch (e) {}
+            if ((q || f) === 'harding') d.setAttribute('data-font', 'harding');
+        })();
+    </script>
+    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">Olivia Gallup</h1>
+        <nav class="nav-container" aria-label="Main">
+            <a href="index.html" class="logo">Olivia Gallup</a>
+            <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </nav>
     </header>
 
     <main class="container-with-sidebar">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-card">
-                <img src="assets/profile.png" alt="Olivia Gallup" class="profile-photo">
+                <img src="assets/profile.png" alt="Portrait of Olivia Gallup" class="profile-photo" width="160" height="160">
                 <h2>Olivia Gallup</h2>
-                <p class="title">Computational Biology Researcher</p>
-                
+                <p class="title">Machine Learning Researcher &amp; Engineer</p>
+                <p class="affiliation">InstaDeep &middot; London<br>DPhil, University of Oxford</p>
                 <div class="social-links">
-                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" title="ORCID">
-                        <i class="fab fa-orcid"></i>
-                    </a>
-                    <a href="https://github.com/olive004" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" title="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:olivia.gallup@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://github.com/olive004" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:olivia.gallup@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <section class="main-content">
-            <div class="intro-section">
-                <h1>Welcome</h1>
-                <p class="lead">
-                    I am a researcher specializing in synthetic biology, machine learning, 
-                    and computational biology. My work focuses on developing innovative tools and methods 
-                    at the intersection of biology and artificial intelligence.
-                </p>
-                
-                <h2>About Me</h2>
-                <p>
-                    Currently pursuing a DPhil, I work on projects ranging from evolutionary landscape analysis 
-                    to genetic circuit design. My research applies computational approaches to biological 
-                    systems to advance our understanding of complex biological processes.
-                </p>
-                
-                <p>
-                    I'm passionate about open science, reproducible research, and creating tools that enable 
-                    other researchers to push the boundaries of what's possible in computational biology.
-                </p>
+        <section class="main-content" id="main">
+            <h1>Hi, I'm Olivia.</h1>
+            <p class="lead">
+                I'm a machine learning researcher and engineer developing generative models and
+                inference-time steering for molecular design, in JAX and PyTorch. My background is in
+                synthetic biology, RNA circuit design and bioprocess modelling.
+            </p>
 
-                <h2>Research Interests</h2>
-                <ul class="research-interests">
-                    <li>Synthetic Biology & Genetic Circuit Design</li>
-                    <li>Machine Learning for Biological Systems</li>
-                    <li>Evolutionary Dynamics & Fitness Landscapes</li>
-                    <li>RNA Design & Engineering</li>
-                </ul>
+            <h2>About</h2>
+            <p>
+                I'm a Research Engineer Intern at <a href="https://www.instadeep.com" target="_blank" rel="noopener">InstaDeep</a> in London,
+                where I work on inference-time reward steering for Boltz protein cofolding, including steering with
+                machine-learned interatomic potentials (MLIPs). I also co-developed
+                <a href="https://github.com/instadeepai/alf" target="_blank" rel="noopener">ALF</a>, an open-source
+                active learning framework for scientific discovery across protein, molecule and materials design.
+            </p>
+            <p>
+                I did my DPhil in Engineering Science at the University of Oxford in the
+                <a href="https://steel.ac/" target="_blank" rel="noopener">Harrison Steel Lab</a> (Control Group), supported by
+                the Wadham College John Brookman Scholarship. There I built a vectorised JAX simulation framework and
+                inverse sequence design tools for synthetic RNA circuits, and trained conditional VAEs on accelerated
+                dynamical simulations to design circuits for both function and evolutionary robustness.
+            </p>
+            <p>
+                During my DPhil, I modelled AAV production at <a href="https://www.asimov.com" target="_blank" rel="noopener">Asimov</a> in Boston,
+                combining Bayesian optimisation, mechanistic models and ML to prioritise process-development experiments.
+                Before that, I studied Molecular Bioengineering (MEng) at Imperial College London.
+            </p>
+            <p>
+                I care about open science, reproducible research and building tools that other researchers actually use.
+            </p>
 
-                <h2 id="contact">Contact</h2>
-                <p>
-                    Feel free to reach out for collaborations, questions, or discussions about research.
-                </p>
-                <p>
-                    <strong>Email:</strong> <a href="mailto:olivia.gallup@gmail.com">olivia.gallup@gmail.com</a>
-                </p>
-            </div>
+            <h2>Research interests</h2>
+            <ul class="research-interests">
+                <li>
+                    <strong>Generative models for molecular design</strong>
+                    <span>Diffusion and flow models and VAEs for proteins, small molecules and biological sequences.</span>
+                </li>
+                <li>
+                    <strong>Foundation models for biology</strong>
+                    <span>Protein and DNA language models for predicting protein function and gene expression from sequence.</span>
+                </li>
+                <li>
+                    <strong>Inference-time steering</strong>
+                    <span>Reward tilting and guidance of pretrained generative models, such as cofolding models, towards physical and functional objectives.</span>
+                </li>
+                <li>
+                    <strong>Active learning &amp; Bayesian optimisation</strong>
+                    <span>Choosing the next experiment when every label costs a wet-lab assay or a long simulation.</span>
+                </li>
+                <li>
+                    <strong>Differentiable simulation for synthetic biology</strong>
+                    <span>JAX-accelerated dynamical models and inverse design of RNA genetic circuits.</span>
+                </li>
+            </ul>
+
+
+            <h2 id="contact">Contact</h2>
+            <p>
+                I'm always happy to talk about collaborations, research questions or open-source tools.
+                Email me at <a href="mailto:olivia.gallup@gmail.com">olivia.gallup@gmail.com</a>.
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Olivia Gallup. All rights reserved.</p>
+        <p>&copy; 2026 Olivia Gallup</p>
     </footer>
-    
-    <!-- Dark mode toggle script -->
-     <script>
-        // Initialize theme from localStorage or system preference
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        
-        // Theme toggle button
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateToggleIcon();
-        });
-        
-        function updateToggleIcon() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggle.querySelector('i');
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-        
-        updateToggleIcon();
-    </script>
+
+    <script src="site.js"></script>
 </body>
 </html>

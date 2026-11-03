@@ -4,192 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Olivia Gallup</title>
+    <meta name="description" content="Software and research projects by Olivia Gallup.">
+    <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
+         Font preview: add ?font=harding or ?font=plex to any page URL. -->
+    <script>
+        (function () {
+            var d = document.documentElement, f = null;
+            var q = new URLSearchParams(location.search).get('font');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+                if (q) { q === 'harding' ? localStorage.setItem('font', 'harding') : localStorage.removeItem('font'); }
+                f = localStorage.getItem('font');
+            } catch (e) {}
+            if ((q || f) === 'harding') d.setAttribute('data-font', 'harding');
+        })();
+    </script>
+    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">Olivia Gallup</h1>
+        <nav class="nav-container" aria-label="Main">
+            <a href="index.html" class="logo">Olivia Gallup</a>
+            <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="publications.html">Publications</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </nav>
     </header>
 
     <main class="container-with-sidebar">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-card">
-                <img src="assets/profile.png" alt="Olivia Gallup" class="profile-photo">
+                <img src="assets/profile.png" alt="Portrait of Olivia Gallup" class="profile-photo" width="160" height="160">
                 <h2>Olivia Gallup</h2>
-                <p class="title">Researcher & Developer</p>
-                
+                <p class="title">Machine Learning Researcher &amp; Engineer</p>
+                <p class="affiliation">InstaDeep &middot; London<br>DPhil, University of Oxford</p>
                 <div class="social-links">
-                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" title="ORCID">
-                        <i class="fab fa-orcid"></i>
-                    </a>
-                    <a href="https://github.com/olive004" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&hl=en" target="_blank" title="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:olivia.gallup@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://github.com/olive004" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:olivia.gallup@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <section class="main-content">
+        <section class="main-content" id="main">
             <h1>Projects</h1>
-            
+            <p class="section-intro">Open-source research software I've built or co-developed.</p>
+
             <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>EvoScaper</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">ML</span>
-                        </div>
+                <article class="project-card featured">
+                    <p class="project-meta">InstaDeep &middot; 2026 &middot; Open source</p>
+                    <h3>ALF &mdash; Active Learning Framework</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Active learning</span>
+                        <span class="tech-tag">AI for Science</span>
                     </div>
                     <p class="project-description">
-                        Evolutionary landscape analysis and visualization tool for understanding 
-                        fitness landscapes and evolutionary dynamics.
+                        An open-source active learning framework for AI-in-Science tasks, where every label costs an experiment
+                        or a long simulation. I co-developed the framework and built oracles spanning protein, molecule and
+                        materials design, along with the workflows for data selection, training, evaluation and experiment tracking.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/olive004/EvoScaper" target="_blank">
-                            <i class="fab fa-github"></i> Repository
-                        </a>
+                        <a href="https://github.com/instadeepai/alf" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                        <a href="https://instadeepai.github.io/alf/" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> Docs</a>
+                        <a href="https://doi.org/10.48550/arXiv.2609.31197" target="_blank" rel="noopener"><i class="fas fa-file-lines" aria-hidden="true"></i> Paper</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Genetic circuit simulator</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Synthetic Biology</span>
-                        </div>
+                <article class="project-card">
+                    <p class="project-meta">Oxford DPhil</p>
+                    <h3>EvoScaper</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">JAX</span>
+                        <span class="tech-tag">diffrax</span>
+                        <span class="tech-tag">VAEs</span>
                     </div>
                     <p class="project-description">
-                        A tool for genetic circuit simulation through RNA interaction predictors, 
-                        enabling modelling and optimisation of biological systems from the sequence level.
+                        Generative design of genetic circuits with conditional VAEs trained on jit/vmap-accelerated diffrax
+                        simulations, optimising for function and evolutionary robustness with an interpretable latent space.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/olive004/genetic_circuit_generator" target="_blank">
-                            <i class="fab fa-github"></i> Repository
-                        </a>
+                        <a href="https://github.com/olive004/EvoScaper" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                        <a href="https://doi.org/10.1038/s41540-026-00683-6" target="_blank" rel="noopener"><i class="fas fa-file-lines" aria-hidden="true"></i> Paper</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>sRNA Design</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">RNA</span>
-                            <span class="tech-tag">Design</span>
-                        </div>
+                <article class="project-card">
+                    <p class="project-meta">Oxford DPhil</p>
+                    <h3>Genetic circuit simulator</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">JAX</span>
+                        <span class="tech-tag">Synthetic biology</span>
                     </div>
                     <p class="project-description">
-                        Computational modelling for designing small RNA molecules with specific 
-                        regulatory properties.
+                        A vectorised JAX framework for simulating synthetic RNA circuits from sequence: RNA&ndash;RNA interaction
+                        predictions feed batched dynamical simulations for modelling and optimisation.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/olive004/sRNA_design" target="_blank">
-                            <i class="fab fa-github"></i> Repository
-                        </a>
+                        <a href="https://github.com/olive004/genetic_circuit_generator" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                        <a href="https://github.com/Steel-Lab-Oxford/core-bioreaction-simulation" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Core simulator</a>
                     </div>
-                </div>
+                </article>
 
+                <article class="project-card">
+                    <p class="project-meta">Oxford DPhil</p>
+                    <h3>sRNA design</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">RNA</span>
+                        <span class="tech-tag">Inverse design</span>
+                    </div>
+                    <p class="project-description">
+                        Inverse sequence design tools for small regulatory RNAs with target interaction properties.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/olive004/sRNA_design" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-meta">iGEM 2020 &middot; Team lead</p>
+                    <h3>Imperial iGEM: DJANGO Assembly Methods</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Lab automation</span>
+                    </div>
+                    <p class="project-description">
+                        Led a multidisciplinary software and wet-lab team. Won a gold medal and a Best Software Prize nomination.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Imperial-iGEM/DJANGO-Assembly-Methods" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                        <a href="https://imperial-igem.github.io/DJANGO-Assembly-Methods/" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> Docs</a>
+                    </div>
+                </article>
             </div>
 
-            <h1>Hackathons</h1>
-
+            <h2>Hackathons</h2>
             <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>ZooTransform</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Foundation Models</span>
-                            <span class="tech-tag">Transformers</span>
-                        </div>
+                <article class="project-card">
+                    <h3>ZooTransform</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Foundation models</span>
+                        <span class="tech-tag">Transformers</span>
                     </div>
                     <p class="project-description">
-                        Hackathon project: Foundation models for biological sequence analysis with uncertainty 
-                        quantification and fine-tuning capabilities.
+                        Foundation models for biological sequence analysis, with uncertainty quantification and fine-tuning.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/zoo-tranform-foundation-models/ZooTransform" target="_blank">
-                            <i class="fab fa-github"></i> Repository
-                        </a>
+                        <a href="https://github.com/zoo-tranform-foundation-models/ZooTransform" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>LatentScience</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">AI</span>
-                        </div>
+                <article class="project-card">
+                    <h3>LatentScience</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">LLMs</span>
                     </div>
                     <p class="project-description">
-                        Hackathon project: Leveraging language models for scientific literature analysis and 
-                        knowledge extraction.
+                        Using language models for scientific literature analysis and knowledge extraction.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/CompMotifs/LatentScience" target="_blank">
-                            <i class="fab fa-github"></i> Repository
-                        </a>
+                        <a href="https://github.com/CompMotifs/LatentScience" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
                     </div>
-                </div>
-
+                </article>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Olivia Gallup. All rights reserved.</p>
+        <p>&copy; 2026 Olivia Gallup</p>
     </footer>
-    
-    <!-- Dark mode toggle script -->
-     <script>
-        // Initialize theme from localStorage or system preference
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        
-        // Theme toggle button
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateToggleIcon();
-        });
-        
-        function updateToggleIcon() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggle.querySelector('i');
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-        
-        updateToggleIcon();
-    </script>
+
+    <script src="site.js"></script>
 </body>
 </html>
