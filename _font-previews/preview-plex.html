@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-font="plex">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Preview - IBM Plex Sans</title>
@@ -140,10 +140,11 @@
     }
 }
 
-/* Harding variant: only a Regular cut exists, so "thinner" is approximated by
+/* Default font: Harding (lightened). IBM Plex Sans is the alternative via
+   data-font="plex" (add ?font=plex to a URL). Only a Regular Harding cut exists, so "thinner" is approximated by
    disabling faux-bold, using regular weight for headings, a slightly larger
    size and a softer text colour. */
-:root[data-font="harding"] {
+:root:not([data-font="plex"]) {
     --font-body: 'Harding', Georgia, 'Times New Roman', serif;
     --font-heading: 'Harding', Georgia, serif;
     --weight-body: 400;
@@ -151,7 +152,7 @@
     --weight-lead: 400;
     --font-size-base: 1.0625rem;
 }
-:root[data-font="harding"] body {
+:root:not([data-font="plex"]) body {
     font-synthesis: none;
     color: color-mix(in srgb, var(--text) 86%, var(--bg));
     letter-spacing: 0.005em;
@@ -756,11 +757,9 @@ footer {
     }
 }
 
-.preview-banner{background:var(--accent);color:var(--on-accent);text-align:center;font-size:.85rem;padding:.35rem 1rem}
 </style>
 </head>
 <body>
-<div class="preview-banner">Font preview: IBM Plex Sans</div>
 <header>
         <nav class="nav-container" aria-label="Main">
             <a href="index.html" class="logo">Olivia Gallup</a>

@@ -116,10 +116,11 @@
     }
 }
 
-/* Harding variant: only a Regular cut exists, so "thinner" is approximated by
+/* Default font: Harding (lightened). IBM Plex Sans is the alternative via
+   data-font="plex" (add ?font=plex to a URL). Only a Regular Harding cut exists, so "thinner" is approximated by
    disabling faux-bold, using regular weight for headings, a slightly larger
    size and a softer text colour. */
-:root[data-font="harding"] {
+:root:not([data-font="plex"]) {
     --font-body: 'Harding', Georgia, 'Times New Roman', serif;
     --font-heading: 'Harding', Georgia, serif;
     --weight-body: 400;
@@ -127,7 +128,7 @@
     --weight-lead: 400;
     --font-size-base: 1.0625rem;
 }
-:root[data-font="harding"] body {
+:root:not([data-font="plex"]) body {
     font-synthesis: none;
     color: color-mix(in srgb, var(--text) 86%, var(--bg));
     letter-spacing: 0.005em;

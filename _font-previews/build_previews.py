@@ -55,7 +55,7 @@ sections = "".join(
 site_js = (ROOT / "site.js").read_text()
 
 for font in ("plex", "harding"):
-    attr = ' data-font="harding"' if font == "harding" else ""
+    attr = ' data-font="plex"' if font == "plex" else ""
     label = "Harding (Regular, lightened)" if font == "harding" else "IBM Plex Sans"
     html = f"""<!DOCTYPE html>
 <html lang="en"{attr}>
@@ -64,11 +64,9 @@ for font in ("plex", "harding"):
 <title>Preview - {label}</title>
 <style>{fa_css}</style>
 <style>{css}
-.preview-banner{{background:var(--accent);color:var(--on-accent);text-align:center;font-size:.85rem;padding:.35rem 1rem}}
 </style>
 </head>
 <body>
-<div class="preview-banner">Font preview: {label}</div>
 {header.replace('assets/profile.png', photo)}
 <main class="container-with-sidebar">
 {sidebar.replace('assets/profile.png', photo)}

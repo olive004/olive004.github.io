@@ -6,7 +6,7 @@
     <title>Projects - Olivia Gallup</title>
     <meta name="description" content="Software and research projects by Olivia Gallup.">
     <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
-         Font preview: add ?font=harding or ?font=plex to any page URL. -->
+         Default font is Harding; add ?font=plex (or ?font=harding to reset) to any page URL. -->
     <script>
         (function () {
             var d = document.documentElement, f = null;
@@ -14,13 +14,13 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
-                if (q) { q === 'harding' ? localStorage.setItem('font', 'harding') : localStorage.removeItem('font'); }
+                if (q) { q === 'plex' ? localStorage.setItem('font', 'plex') : localStorage.removeItem('font'); }
                 f = localStorage.getItem('font');
             } catch (e) {}
-            if ((q || f) === 'harding') d.setAttribute('data-font', 'harding');
+            if ((q || f) === 'plex') d.setAttribute('data-font', 'plex');
         })();
     </script>
-    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/Harding_Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
