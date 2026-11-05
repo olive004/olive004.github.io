@@ -1,7 +1,7 @@
 """Build self-contained font-comparison previews of the site.
 
 Run from the repo root:  python3 _font-previews/build_previews.py [path/to/fontawesome-free]
-Outputs _font-previews/preview-plex.html and preview-harding.html. Each file inlines
+Outputs _font-previews/preview-plex.html and preview-custom.html. Each file inlines
 CSS, fonts and images so it opens offline, and shows all three pages as tabs.
 The leading underscore keeps this folder out of the published GitHub Pages site.
 """
@@ -54,9 +54,9 @@ sections = "".join(
 )
 site_js = (ROOT / "site.js").read_text()
 
-for font in ("plex", "harding"):
+for font in ("plex", "custom"):
     attr = ' data-font="plex"' if font == "plex" else ""
-    label = "Harding (Regular, lightened)" if font == "harding" else "IBM Plex Sans"
+    label = "Custom (Regular, lightened)" if font == "custom" else "IBM Plex Sans"
     html = f"""<!DOCTYPE html>
 <html lang="en"{attr}>
 <head>

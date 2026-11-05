@@ -6,7 +6,7 @@
     <title>Olivia Gallup</title>
     <meta name="description" content="Olivia Gallup - machine learning researcher working on generative models and inference-time steering for molecular design.">
     <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
-         Default font is Harding; add ?font=plex (or ?font=harding to reset) to any page URL. -->
+         Default font is Custom; add ?font=plex (or ?font=custom to reset) to any page URL. -->
     <script>
         (function () {
             var d = document.documentElement, f = null;
@@ -20,7 +20,8 @@
             if ((q || f) === 'plex') d.setAttribute('data-font', 'plex');
         })();
     </script>
-    <link rel="preload" href="assets/Harding_Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/Custom_Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -94,28 +95,32 @@
 
             <h2>Research interests</h2>
             <ul class="research-interests">
-                <li>
-                    <strong>Generative models for molecular design</strong>
-                    <span>Diffusion and flow models and VAEs for proteins, small molecules and biological sequences.</span>
-                </li>
-                <li>
-                    <strong>Foundation models for biology</strong>
-                    <span>Protein and DNA language models for predicting protein function and gene expression from sequence.</span>
-                </li>
-                <li>
-                    <strong>Inference-time steering</strong>
-                    <span>Reward tilting and guidance of pretrained generative models, such as cofolding models, towards physical and functional objectives.</span>
-                </li>
-                <li>
-                    <strong>Active learning &amp; Bayesian optimisation</strong>
-                    <span>Choosing the next experiment when every label costs a wet-lab assay or a long simulation.</span>
-                </li>
-                <li>
-                    <strong>Differentiable simulation for synthetic biology</strong>
-                    <span>JAX-accelerated dynamical models and inverse design of RNA genetic circuits.</span>
-                </li>
+                <li><strong>Generative models for molecular design</strong> &mdash; diffusion, flow models and VAEs for proteins, small molecules and biological sequences</li>
+                <li><strong>Foundation models for biology</strong> &mdash; protein and DNA language models for predicting protein function and gene expression</li>
+                <li><strong>Inference-time steering</strong> &mdash; reward tilting and guidance of pretrained generative models, such as cofolding models</li>
+                <li><strong>Active learning &amp; Bayesian optimisation</strong> &mdash; choosing the next experiment when labels are expensive</li>
+                <li><strong>Differentiable simulation for synthetic biology</strong> &mdash; JAX-accelerated dynamical models and inverse design of RNA circuits</li>
             </ul>
 
+            <h2>Selected publications</h2>
+            <ol class="publication-list compact">
+                <li class="publication-item">
+                    <h3><a href="https://arxiv.org/abs/2610.25502" target="_blank" rel="noopener">Steered Not Stirred: Effective Tilting in Generative Models using Surrogate Reward Mixing</a></h3>
+                    <p class="authors">Sargood A, <span class="me">Gallup O</span>, Maierhofer G, Ghenassia N, Duckworth P, Sinkovics K, Bose AJ</p>
+                    <p class="venue"><em>NeurIPS 2026 Workshop (STODY)</em>, poster (2026) <span class="badge">ICLR 2027 under review</span></p>
+                </li>
+                <li class="publication-item">
+                    <h3><a href="https://doi.org/10.1038/s41540-026-00683-6" target="_blank" rel="noopener">Generative design of synthetic gene circuits for functional and evolutionary properties</a></h3>
+                    <p class="authors"><span class="me">Gallup O</span>, Steel H</p>
+                    <p class="venue"><em>npj Systems Biology and Applications</em> (2026)</p>
+                </li>
+                <li class="publication-item">
+                    <h3><a href="https://doi.org/10.1021/acssynbio.4c00307" target="_blank" rel="noopener">Computational Synthetic Biology Enabled through JAX: A Showcase</a></h3>
+                    <p class="authors"><span class="me">Gallup O</span>, Sechkar K, Towers S, Steel H</p>
+                    <p class="venue"><em>ACS Synthetic Biology</em> (2024)</p>
+                </li>
+            </ol>
+            <p class="more-link"><a href="publications.html">All publications &rarr;</a></p>
 
             <h2 id="contact">Contact</h2>
             <p>

@@ -37,10 +37,10 @@
     font-display: swap;
 }
 
-/* Harding ships with a single Regular (400) weight only. */
+/* Custom ships with a single Regular (400) weight only. */
 @font-face {
-    font-family: 'Harding';
-    src: url('assets/Harding_Regular.ttf') format('truetype');
+    font-family: 'Custom';
+    src: url('assets/Custom_Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -116,13 +116,13 @@
     }
 }
 
-/* Default font: Harding (lightened). IBM Plex Sans is the alternative via
-   data-font="plex" (add ?font=plex to a URL). Only a Regular Harding cut exists, so "thinner" is approximated by
+/* Default font: Custom (lightened). IBM Plex Sans is the alternative via
+   data-font="plex" (add ?font=plex to a URL). Only a Regular Custom cut exists, so "thinner" is approximated by
    disabling faux-bold, using regular weight for headings, a slightly larger
    size and a softer text colour. */
 :root:not([data-font="plex"]) {
-    --font-body: 'Harding', Georgia, 'Times New Roman', serif;
-    --font-heading: 'Harding', Georgia, serif;
+    --font-body: 'Custom', Georgia, 'Times New Roman', serif;
+    --font-heading: 'Custom', Georgia, serif;
     --weight-body: 400;
     --weight-heading: 400;
     --weight-lead: 400;
@@ -132,7 +132,7 @@
     font-synthesis: none;
     color: color-mix(in srgb, var(--text) 86%, var(--bg));
     letter-spacing: 0.005em;
-    word-spacing: 0.08em; /* Harding's space glyph is narrow at small sizes */
+    word-spacing: 0.08em; /* Custom's space glyph is narrow at small sizes */
 }
 
 /* ===========================
@@ -414,51 +414,47 @@ header {
 
 /* Research interests */
 .research-interests {
-    list-style: none;
-    display: grid;
-    gap: 0.75rem;
+    padding-left: 1.25rem;
 }
 
 .research-interests li {
-    padding: 0.85rem 1rem 0.85rem 1.1rem;
-    background: var(--surface-2);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+}
+
+.research-interests li::marker {
+    color: var(--accent);
 }
 
 .research-interests strong {
-    display: block;
     font-weight: var(--weight-heading);
     color: var(--text);
 }
 
-.research-interests span {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+/* Compact publication list (home page) */
+.publication-list.compact .publication-item {
+    padding: 0.75rem 0;
 }
 
-/* News */
-.news-list {
-    list-style: none;
+.publication-list.compact h3 {
+    font-size: 1.05rem;
 }
 
-.news-list li {
-    display: grid;
-    grid-template-columns: 6.5rem 1fr;
-    gap: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed var(--border);
+.publication-list.compact h3 a {
+    color: var(--text);
 }
 
-.news-list li:last-child {
-    border-bottom: none;
+.publication-list.compact h3 a:hover {
+    color: var(--accent);
 }
 
-.news-date {
-    color: var(--text-muted);
-    font-variant-numeric: tabular-nums;
-    font-size: 0.9rem;
-    padding-top: 0.1rem;
+.publication-list.compact .venue {
+    margin-bottom: 0;
+}
+
+.more-link {
+    margin-top: 0.5rem;
+    font-weight: 500;
 }
 
 /* ===========================
@@ -719,11 +715,6 @@ footer {
     .profile-photo {
         width: 120px;
         height: 120px;
-    }
-
-    .news-list li {
-        grid-template-columns: 1fr;
-        gap: 0;
     }
 }
 
