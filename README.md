@@ -30,3 +30,9 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 Push to the `main` branch of the `olive004.github.io` repository and enable
 GitHub Pages (Settings → Pages → Deploy from branch → `main` / root).
+
+## After editing CSS or JS
+
+Bump the `?v=` number on the `styles.css` and `site.js` links in all four HTML files
+(`index.html`, `publications.html`, `projects.html`, `404.html`) so browsers fetch the new version
+instead of a cached copy.
