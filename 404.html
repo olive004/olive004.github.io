@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found - Olivia Gallup</title>
+    <meta name="description" content="Olivia Gallup - machine learning researcher working on generative models and inference-time steering for molecular design.">
+    <!-- Apply saved theme / font before first paint (prevents a light flash in dark mode).
+         Default font is Custom; add ?font=plex (or ?font=custom to reset) to any page URL. -->
+    <script>
+        (function () {
+            var d = document.documentElement, f = null;
+            var q = new URLSearchParams(location.search).get('font');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+                if (q) { q === 'plex' ? localStorage.setItem('font', 'plex') : localStorage.removeItem('font'); }
+                f = localStorage.getItem('font');
+            } catch (e) {}
+            if ((q || f) === 'plex') d.setAttribute('data-font', 'plex');
+        })();
+    </script>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/Custom_Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+        <nav class="nav-container" aria-label="Main">
+            <a href="/index.html" class="logo">Olivia Gallup</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/index.html#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-with-sidebar">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="/assets/profile.png" alt="Portrait of Olivia Gallup" class="profile-photo" width="160" height="160">
+                <h2>Olivia Gallup</h2>
+                <p class="title">Machine Learning Researcher &amp; Engineer</p>
+                <p class="affiliation">InstaDeep &middot; London<br>DPhil, University of Oxford</p>
+                <div class="social-links">
+                    <a href="https://github.com/olive004" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=GwYjyykAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0000-0001-7341-6160" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.linkedin.com/in/olivia-gallup/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:olivia.gallup@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <section class="main-content" id="main">
+            <h1>Page not found</h1>
+            <p class="lead">Sorry, that page doesn't exist.</p>
+            <p><a href="/index.html">Go to the home page &rarr;</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Olivia Gallup</p>
+    </footer>
+
+    <script src="/site.js"></script>
+</body>
+</html>

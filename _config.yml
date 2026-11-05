@@ -1,2 +1,12 @@
-name: Olivia Gallup
+# GitHub Pages (Jekyll) configuration.
+# The pages are plain HTML with no front matter, so Jekyll copies them as-is.
+title: Olivia Gallup
+description: Machine learning researcher working on generative models and inference-time steering for molecular design.
+url: https://olive004.github.io
 markdown: kramdown
+
+# Folders starting with "_" (e.g. _font-previews) are never published.
+exclude:
+  - README.md
+  - .gitignore
+  - "*.py"
